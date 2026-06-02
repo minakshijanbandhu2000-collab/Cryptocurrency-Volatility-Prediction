@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crypto Volatility Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Cryptocurrency Volatility Prediction</h1>
+
+    <form action="/predict" method="POST">
+
+        <input type="text" name="open" placeholder="Open Price" required>
+        <input type="text" name="high" placeholder="High Price" required>
+        <input type="text" name="low" placeholder="Low Price" required>
+        <input type="text" name="close" placeholder="Close Price" required>
+        <input type="text" name="volume" placeholder="Volume" required>
+        <input type="text" name="marketcap" placeholder="Market Cap" required>
+        <input type="text" name="daily_return" placeholder="Daily Return" required>
+        <input type="text" name="ma7" placeholder="MA 7" required>
+        <input type="text" name="ma14" placeholder="MA 14" required>
+        <input type="text" name="liquidity_ratio" placeholder="Liquidity Ratio" required>
+        <input type="text" name="atr" placeholder="ATR" required>
+
+        <button type="submit">Predict</button>
+
+    </form>
+
+    <h2>{{ prediction_text }}</h2>
+</div>
+
+</body>
+</html>
